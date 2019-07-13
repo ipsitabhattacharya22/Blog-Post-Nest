@@ -1,0 +1,6 @@
+---
+applications:
+- name: "blog-post-dev"
+  buildpacks:
+  - "https://github.com/cloudfoundry/staticfile-buildpack.git"
+
