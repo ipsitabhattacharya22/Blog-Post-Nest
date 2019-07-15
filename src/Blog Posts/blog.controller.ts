@@ -36,19 +36,19 @@ export class BlogController {
         return { status: 'SUCCESS', message: 'Blog deleted successfully' };
     }
 
-    @Put('editComments')
+    @Post('editComments')
     async editComments(@Body('blogId') blogId: string, @Body('commentId') commentId: string, @Body('commentText') commentText: string) {
         const blogList = await this.blogService.updateCommentNew(blogId, commentId, commentText);
         return { status: 'SUCCESS', message: 'Comment edited successfully' };
     }
 
-    @Delete('deleteComments')
+    @Post('deleteComments')
     async deleteComments(@Body('blogId') blogId: string, @Body('commentId') commentId: string) {
         const blogList = await this.blogService.deleteCommentNew(blogId, commentId);
         return { status: 'SUCCESS', message: 'Comment deleted successfully' };
     }
 
-    @Put('updateBlog')
+    @Post('updateBlog')
     async updateBlog(@Body('blogId') blogId: string, @Body('blogHeader') blogHeader: string, @Body('blogContent') blogContent: string) {
         const blogList = await this.blogService.updateBlog(blogId, blogHeader, blogContent);
         return { status: 'SUCCESS', message: 'Blog updated successfully' };
